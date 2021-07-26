@@ -11,6 +11,7 @@
         "format": "prettier -w",
         "---shortcuts---": "",
         "clean": "git clean -xdi -e /.env",
+        "psql": "docker-compose exec postgres psql -U qq -d brain",
         "---workspaces---": "",
         "brain": "yarn workspace @qq/brain"
     },

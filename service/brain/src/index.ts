@@ -1,10 +1,5 @@
-import configUtils from '@qq/config';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+import { configureContainer, runApp, waitUntilReady } from './app';
 
-const defaultConfig = configUtils.createConfig({
-    env: 'dev',
-});
-
-const loadConfig = configUtils.loadConfigFactory(defaultConfig);
-
-const config = loadConfig();
-console.log(config);
+configureContainer(container).then(waitUntilReady).then(runApp);
