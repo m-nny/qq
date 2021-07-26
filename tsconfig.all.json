@@ -1,0 +1,7 @@
+{
+    "extends": "./tsconfig.common.json",
+    "references": [{ "path": "lib/config" }, { "path": "service/brain" }],
+    "files": [],
+    "include": [],
+    "exclude": ["**/node_modules"]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "@qq/brain",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc --build",
+        "start": "ts-node src/index.ts",
+        "start:js": "node dist/index.js"
+    },
+    "dependencies": {
+        "@qq/config": "^1.0.0"
+    }
+}
