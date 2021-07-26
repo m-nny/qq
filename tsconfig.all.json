@@ -1,6 +1,10 @@
 {
     "extends": "./tsconfig.common.json",
-    "references": [{ "path": "lib/config" }, { "path": "service/brain" }],
+    "references": [
+        { "path": "lib/config" },
+        { "path": "lib/minio" },
+        { "path": "service/brain" }
+    ],
     "files": [],
     "include": [],
     "exclude": ["**/node_modules"]

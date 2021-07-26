@@ -9,8 +9,19 @@ services:
             - postgres:/var/lib/postgresql/data
         environment:
             - POSTGRES_USER=qq
-            - POSTGRES_PASSWORD=qq
+            - POSTGRES_PASSWORD=misiq
             - POSTGRES_DB=brain
+    minio:
+        image: minio/minio:RELEASE.2021-01-08T21-18-21Z
+        ports:
+            - 9002:9000
+        environment:
+            - MINIO_ROOT_USER=qq-qq
+            - MINIO_ROOT_PASSWORD=misiq-misiq
+        command: server /minio
+        volumes:
+            - minio:/minio
 
 volumes:
     postgres:
+    minio:

@@ -1,6 +1,7 @@
 import { singleton } from 'tsyringe';
-import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { Arg, Args, Mutation, Query, Resolver } from 'type-graphql';
 import { User } from './entity';
+import { RegisterInput } from './inputs';
 import { UserService } from './service';
 
 @singleton()
@@ -19,11 +20,7 @@ export class UserResolver {
         return await this.user.findByKey({ username });
     }
     @Mutation(() => User)
-    async register(
-        @Arg('username') username: string,
-        @Arg('fullname') fullname: string
-    ): Promise<User> {
-        const user = await this.user.create({ username, fullname });
-        return user;
+    async register(@Arg('data') data: RegisterInput): Promise<User> {
+        return await this.user.create(data);
     }
 }

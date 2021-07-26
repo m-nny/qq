@@ -11,5 +11,8 @@
         // "experimentalDecorators": true,
         // "removeComments": false
     },
-    "references": [{ "path": "../../lib/config" }]
+    "references": [
+        { "path": "../../lib/config" },
+        { "path": "../../lib/minio" }
+    ]
 }
